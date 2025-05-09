@@ -353,6 +353,9 @@ const recipes = [
     }
 
     // Close mobile nav after clicking a nav link
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.navbar').classList.toggle('active');
+});
 navLinks.forEach(link => {
     link.addEventListener('click', function () {
         if (window.innerWidth <= 768) {
