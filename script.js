@@ -181,6 +181,24 @@ const recipes = [
     const backBtn = document.querySelector('.back-btn');
     const faqItems = document.querySelectorAll('.faq-item');
 
+    // Tab functionality for About section
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        btn.classList.add('active');
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+    
     // Display all recipes initially
     displayRecipes(recipes);
 
